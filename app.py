@@ -8,9 +8,9 @@ load_dotenv()
 
 def create_app():
     app = Flask (__name__)
-    client = MongoClient("MONGODB_URI", connect = False)
+    client = MongoClient("mongodb+srv://benliu983:10303lzb@microblog-application.fchal.mongodb.net/test")
+    #client = MongoClient(os.environ.get("MONGODB_URI"))
     app.db = client.microblog
-    #entries = []
 
     @app.route("/", methods =["GET","POST"])
     def home():
